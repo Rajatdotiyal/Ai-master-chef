@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --body__bg: rgb(240, 240, 240);
+    --body__color: black;
+    --body__color-secondary: #3b3b3b;
+    --dot-color: lightslategray;
+    --image__color: invert(0);
+    --footer__bg: #0a0a0a;
+    --body__job__bg: rgb(241 245 249);
+    --body__team__bg: rgb(229 231 235);
+    --border-color: rgb(229 231 235);
+    --input__bg: #d1d5db;
+}
+
+[data-theme='dark'] {
+    --body__bg: #0a0a0a;
+    --body__color: white;
+    --body__color-secondary: #C0C0C0;
+    --dot-color: #1c1c1c;
+    --image__color: invert(100%);
+    --footer__bg: #ffffff;
+    --body__job__bg: var(--body__bg);
+    --body__team__bg: var(--body__bg);
+    --border-color: #1c1c1c;
+    --input__bg: #1c1c1c;
+}
+
+body {
+    --dot-bg: var(--body__bg);
+    --dot-size: 1px;
+    --dot-space: 15px;
+    background:
+        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        linear-gradient(to top, var(--dot-color), var(--dot-color));
+    overflow-x: hidden;
+}
+
+.custom-bg {
+    background-color: var(--body__bg);
+}
+
+.custom-job-bg {
+    background-color: var(--body__job__bg);
+}
+
+.custom-team-bg {
+    background-color: var(--body__team__bg);
+}
+
+.custom-text {
+    color: var(--body__color);
+}
+
+.custom-text-secondary {
+    color: var(--body__color-secondary);
+}
+
+.custom-image {
+    -webkit-filter: var(--image__color);
+    filter: var(--image__color);
+}
+
+.custom-border {
+    border-color: var(--border-color);
+}
+
+.custom-input {
+    background-color: var(--input__bg);
+}
+
+.custom-footer {
+    background-color: var(--footer__bg) !important;
+    color: var(--body__bg) !important;
+}
